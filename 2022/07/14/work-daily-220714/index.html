@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dengcqw.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="技术踩坑视频拍摄实时水印生成水印图片 方法一 使用UIKit  CALayer 的方法renderInContext可以在CGContext绘制内容 方法二 使用CoreGraphic  找了好就久，找到这个CGContext的变换过程详解。CG是很老的东西了吗？  直接使用NSString, UIImage的draw方法在CGContext上绘制总结：方法一性能比方法二好，前者要0.01s-0.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="work_daily_220714">
+<meta property="og:url" content="https://dengcqw.github.io/2022/07/14/work-daily-220714/index.html">
+<meta property="og:site_name" content="Deng&#39;s Technique Blogs">
+<meta property="og:description" content="技术踩坑视频拍摄实时水印生成水印图片 方法一 使用UIKit  CALayer 的方法renderInContext可以在CGContext绘制内容 方法二 使用CoreGraphic  找了好就久，找到这个CGContext的变换过程详解。CG是很老的东西了吗？  直接使用NSString, UIImage的draw方法在CGContext上绘制总结：方法一性能比方法二好，前者要0.01s-0.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-14T01:33:36.000Z">
+<meta property="article:modified_time" content="2022-07-24T08:06:18.592Z">
+<meta property="article:author" content="DengJinlong">
+<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="computer">
+<meta property="article:tag" content="思考">
+<meta property="article:tag" content="thinking">
+<meta property="article:tag" content="移动互联网">
+<meta property="article:tag" content="mobile internet">
+<meta property="article:tag" content="软件">
+<meta property="article:tag" content="Software">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dengcqw.github.io/2022/07/14/work-daily-220714/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dengcqw.github.io/2022/07/14/work-daily-220714/","path":"2022/07/14/work-daily-220714/","title":"work_daily_220714"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>work_daily_220714 | Deng's Technique Blogs</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Deng's Technique Blogs</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">邓小宝的技术博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E8%B8%A9%E5%9D%91"><span class="nav-number">1.</span> <span class="nav-text">技术踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%86%E9%A2%91%E6%8B%8D%E6%91%84%E5%AE%9E%E6%97%B6%E6%B0%B4%E5%8D%B0"><span class="nav-number">1.1.</span> <span class="nav-text">视频拍摄实时水印</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%B0%B4%E5%8D%B0%E5%9B%BE%E7%89%87"><span class="nav-number">1.1.1.</span> <span class="nav-text">生成水印图片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E5%9B%BE%E7%89%87"><span class="nav-number">1.1.2.</span> <span class="nav-text">旋转图片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E9%AA%8C%E8%AF%81"><span class="nav-number">1.1.3.</span> <span class="nav-text">性能验证</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E5%9B%BE%E7%89%87"><span class="nav-number">1.1.4.</span> <span class="nav-text">合并图片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E8%BE%93%E5%87%BA%E8%A7%86%E9%A2%91"><span class="nav-number">1.1.5.</span> <span class="nav-text">压缩输出视频</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E6%87%82%E5%B0%B1%E9%97%AE"><span class="nav-number">2.</span> <span class="nav-text">不懂就问</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UIViewController%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%9E%E8%B0%83"><span class="nav-number">2.1.</span> <span class="nav-text">UIViewController生命周期回调</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#swift-%E7%BB%98%E5%88%B6-string"><span class="nav-number">2.2.</span> <span class="nav-text">swift 绘制 string</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E8%A7%86%E9%A2%91%E5%88%86%E8%BE%A8%E7%8E%87%EF%BC%9F"><span class="nav-number">2.3.</span> <span class="nav-text">查看视频分辨率？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B0%83%E8%AF%95CGCoreGraphic"><span class="nav-number">2.4.</span> <span class="nav-text">调试CGCoreGraphic</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%B3%E5%95%A5%E5%86%99%E5%95%A5"><span class="nav-number">3.</span> <span class="nav-text">想啥写啥</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">DengJinlong</p>
+  <div class="site-description" itemprop="description">我也有个写作的梦想，还有大把时间，努力实现吧。I also have a dream about writing. A mount of time in the feature, it's never too late.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dengcqw.github.io/2022/07/14/work-daily-220714/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="DengJinlong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Deng's Technique Blogs">
+      <meta itemprop="description" content="我也有个写作的梦想，还有大把时间，努力实现吧。I also have a dream about writing. A mount of time in the feature, it's never too late.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="work_daily_220714 | Deng's Technique Blogs">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          work_daily_220714
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-07-14 09:33:36" itemprop="dateCreated datePublished" datetime="2022-07-14T09:33:36+08:00">2022-07-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-24 16:06:18" itemprop="dateModified" datetime="2022-07-24T16:06:18+08:00">2022-07-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/work/" itemprop="url" rel="index"><span itemprop="name">工作日记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><h4 id="视频拍摄实时水印"><a href="#视频拍摄实时水印" class="headerlink" title="视频拍摄实时水印"></a>视频拍摄实时水印</h4><h5 id="生成水印图片"><a href="#生成水印图片" class="headerlink" title="生成水印图片"></a>生成水印图片</h5><ul>
+<li>方法一 使用UIKit<br>  CALayer 的方法renderInContext可以在CGContext绘制内容</li>
+<li>方法二 使用CoreGraphic<br>  找了好就久，找到这个<a href="https://juejin.cn/post/6856567623615217672">CGContext的变换过程详解</a>。CG是很老的东西了吗？<br>  直接使用NSString, UIImage的draw方法在CGContext上绘制<br>总结：方法一性能比方法二好，前者要0.01s-0.02s，后者稳定在0.01s以下</li>
+</ul>
+<h5 id="旋转图片"><a href="#旋转图片" class="headerlink" title="旋转图片"></a>旋转图片</h5><p>现在要旋转生成的图片，因为竖屏拍摄的视频内容是横屏的，通过断点调试查看图片发现的。</p>
+<ul>
+<li>尝试了UIView的transform属性，再生成图片，无效。</li>
+<li>新建CGContext，设置 CGContextRotateCTM，再绘制图片（我觉得效率不高）</li>
+<li>使用-[CIImage imageByApplyingOrientation] (效率高，真实图片并没旋转)</li>
+<li>UIImage(cgImage:, scale:, orientation:) (好像只对UIKit有效，对CG无效)</li>
+</ul>
+<h5 id="性能验证"><a href="#性能验证" class="headerlink" title="性能验证"></a>性能验证</h5><p>拍摄时会一秒卡顿一次。 可能是生成水印的性能问题。<br>那把水印去掉看看。还真是这个性能问题。<br>render layer 要 0.01s-0.02s   直接绘制性能好些 0.01s以下<br>render layer + rotation 要  0.1s</p>
+<p>最后选择 CoreGraphic绘制图片，再用CIImage 旋转图片</p>
+<h5 id="合并图片"><a href="#合并图片" class="headerlink" title="合并图片"></a>合并图片</h5><p>使用-[CIImage imageByCompositingOverImage] 或CIFilter<br>这里有个多线程问题，设置水印的线程和读取水印的线程不样。<br>为了方式出现问题，使用了NSLock</p>
+<h5 id="压缩输出视频"><a href="#压缩输出视频" class="headerlink" title="压缩输出视频"></a>压缩输出视频</h5><ul>
+<li><p>可以设置AVCaptureSession 的 帧率，由30降到25</p>
+</li>
+<li><p>AVCaptureSessionPreset 可以修改设备拍摄的分辨率<br>  AVCaptureSessionPresetMedium（suitable for sharing over WiFi.）<br>  AVCaptureSessionPresetLow   （suitable for sharing over 3G.）<br>  AVCaptureSessionPreset960x540<br>  AVCaptureSessionPreset1280x720</p>
+</li>
+<li><p>输出视频的设置<br>找到一个库<a href="https://github.com/SergeyPetrachkov/SwiftyVideoExporter">SwiftyVideoExporter</a>，其中就有通过设置Video Settings改变输出视频相关参数。<br>Video Settings 没有找到明确的文档说明，专业做视频的人可能知道参数的含义。<br>通过打印查看</p>
+<pre><code>  &#123;
+      AVVideoCodecKey = avc1;
+      AVVideoCompressionPropertiesKey =     &#123;
+          AverageBitRate = 8755200;
+          ExpectedFrameRate = 25;
+          MaxKeyFrameIntervalDuration = 1;
+          Priority = 80;
+          ProfileLevel = &quot;H264_Baseline_AutoLevel&quot;;
+          RealTime = 1;
+      &#125;;
+      AVVideoHeightKey = 720;
+      AVVideoWidthKey = 1280;
+  &#125;
+</code></pre>
+<p>  等比例修改AVVideoHeightKey, AVVideoWidthKey 再传给AVAssetWriter可以实现视频压缩</p>
+</li>
+</ul>
+<h3 id="不懂就问"><a href="#不懂就问" class="headerlink" title="不懂就问"></a>不懂就问</h3><h4 id="UIViewController生命周期回调"><a href="#UIViewController生命周期回调" class="headerlink" title="UIViewController生命周期回调"></a>UIViewController生命周期回调</h4><p>let vc &#x3D; CaptureViewController()<br>调用vc.view 会触发viewWillAppear生命周期函数</p>
+<h4 id="swift-绘制-string"><a href="#swift-绘制-string" class="headerlink" title="swift 绘制 string"></a>swift 绘制 string</h4><p>转成成NSString, 再使用draw 方法</p>
+<h4 id="查看视频分辨率？"><a href="#查看视频分辨率？" class="headerlink" title="查看视频分辨率？"></a>查看视频分辨率？</h4><p>ffprobe -i video.flv<br>ffmpeg -i filename.flv</p>
+<h4 id="调试CGCoreGraphic"><a href="#调试CGCoreGraphic" class="headerlink" title="调试CGCoreGraphic"></a>调试CGCoreGraphic</h4><p>CGContet 可以设置transform  修改坐标系<br>可是在draw之前设置，还是在draw之后呢？<br>CGContext 调试太难，有没有在线工具？</p>
+<h3 id="想啥写啥"><a href="#想啥写啥" class="headerlink" title="想啥写啥"></a>想啥写啥</h3><p>周五面试 RN开发 初中级开发</p>
+<p>公司还是有些混乱。可以记录下来。编撰成册呢。</p>
+<p>产品经理找我给需求评估开发时间，这个需求是用RN写的。有很多基础设施建设工作。我正忙于别的需求，明天再评估。</p>
+<p>过程式代码，逻辑混乱，代码跳来跳去。有点抓狂。</p>
+<p>swift 编译快了。我以前花了几天时间写的：只编译修改文件再link的工具没什么用了啦。但是调试还很慢。<br>Archive 了一下公司项目 App有240M。 ipa 68M。 直接压缩有100M。为什么呢</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/13/work-daily-220713/" rel="prev" title="work_daily_220713">
+                  <i class="fa fa-chevron-left"></i> work_daily_220713
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">DengJinlong</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
