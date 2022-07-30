@@ -20,17 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"dengcqw.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="技术踩坑RN打包静态库 查看依赖的命令，下面是同一个命令npx react-native confignode &#x2F;Users&#x2F;dengjinlong&#x2F;Documents&#x2F;1-rn&#x2F;AwesomeProject&#x2F;node_modules&#x2F;@react-native-community&#x2F;cli&#x2F;build&amp;#x2">
+    <meta name="description" content="技术踩坑RN iOS style data picker现在需要选择一个scroll data picker。功能不复杂，但要保持iOS和安卓样式统一。所以需要纯js实现的，那就有点复杂了，涉及动画实现。找来找去也就几个可选：  react-native-picker&#x2F;picker 两端不统一，可配置性低。原生控件效果好 react-simple-wheel-picker 长时间未更新，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="work_daily_220711">
-<meta property="og:url" content="https://dengcqw.github.io/2022/07/11/work-daily-220711/index.html">
+<meta property="og:title" content="work-daily-220721">
+<meta property="og:url" content="https://dengcqw.github.io/2022/07/21/work-daily-220721/index.html">
 <meta property="og:site_name" content="Deng&#39;s Technique Blogs">
-<meta property="og:description" content="技术踩坑RN打包静态库 查看依赖的命令，下面是同一个命令npx react-native confignode &#x2F;Users&#x2F;dengjinlong&#x2F;Documents&#x2F;1-rn&#x2F;AwesomeProject&#x2F;node_modules&#x2F;@react-native-community&#x2F;cli&#x2F;build&amp;#x2">
+<meta property="og:description" content="技术踩坑RN iOS style data picker现在需要选择一个scroll data picker。功能不复杂，但要保持iOS和安卓样式统一。所以需要纯js实现的，那就有点复杂了，涉及动画实现。找来找去也就几个可选：  react-native-picker&#x2F;picker 两端不统一，可配置性低。原生控件效果好 react-simple-wheel-picker 长时间未更新，">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://dengcqw.github.io/imgs/xcode_show_env_var.webp">
-<meta property="og:image" content="https://dengcqw.github.io/imgs/xcode_rn_React-Codegen_build_err.webp">
-<meta property="article:published_time" content="2022-07-11T01:33:36.000Z">
-<meta property="article:modified_time" content="2022-07-24T08:06:18.590Z">
+<meta property="article:published_time" content="2022-07-21T01:08:44.000Z">
+<meta property="article:modified_time" content="2022-07-30T23:26:09.103Z">
 <meta property="article:author" content="DengJinlong">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="computer">
@@ -41,17 +39,16 @@
 <meta property="article:tag" content="软件">
 <meta property="article:tag" content="Software">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://dengcqw.github.io/imgs/xcode_show_env_var.webp">
 
 
-<link rel="canonical" href="https://dengcqw.github.io/2022/07/11/work-daily-220711/">
+<link rel="canonical" href="https://dengcqw.github.io/2022/07/21/work-daily-220721/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dengcqw.github.io/2022/07/11/work-daily-220711/","path":"2022/07/11/work-daily-220711/","title":"work_daily_220711"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dengcqw.github.io/2022/07/21/work-daily-220721/","path":"2022/07/21/work-daily-220721/","title":"work-daily-220721"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>work_daily_220711 | Deng's Technique Blogs</title>
+<title>work-daily-220721 | Deng's Technique Blogs</title>
   
 
 
@@ -120,7 +117,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E8%B8%A9%E5%9D%91"><span class="nav-number">1.</span> <span class="nav-text">技术踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RN%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text">RN打包静态库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RN-lint-%E7%BB%8F%E5%B8%B8%E6%8A%A5%E5%A5%87%E6%80%AA%E7%9A%84%E9%94%99%E8%AF%AF"><span class="nav-number">1.2.</span> <span class="nav-text">RN lint 经常报奇怪的错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react-native-classroom"><span class="nav-number">1.3.</span> <span class="nav-text">react-native-classroom</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E6%87%82%E5%B0%B1%E9%97%AE"><span class="nav-number">2.</span> <span class="nav-text">不懂就问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%B3%E5%95%A5%E5%86%99%E5%95%A5"><span class="nav-number">3.</span> <span class="nav-text">想啥写啥</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E8%B8%A9%E5%9D%91"><span class="nav-number">1.</span> <span class="nav-text">技术踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RN-iOS-style-data-picker"><span class="nav-number">1.1.</span> <span class="nav-text">RN iOS style data picker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RN%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%B9%E6%A1%86"><span class="nav-number">1.2.</span> <span class="nav-text">RN自定义弹框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RN%E5%8A%A8%E7%94%BB%E5%BA%93"><span class="nav-number">1.3.</span> <span class="nav-text">RN动画库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E6%87%82%E5%B0%B1%E9%97%AE"><span class="nav-number">2.</span> <span class="nav-text">不懂就问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%B3%E5%95%A5%E5%86%99%E5%95%A5"><span class="nav-number">3.</span> <span class="nav-text">想啥写啥</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -181,7 +178,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://dengcqw.github.io/2022/07/11/work-daily-220711/">
+    <link itemprop="mainEntityOfPage" href="https://dengcqw.github.io/2022/07/21/work-daily-220721/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -194,12 +191,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="work_daily_220711 | Deng's Technique Blogs">
+      <meta itemprop="name" content="work-daily-220721 | Deng's Technique Blogs">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          work_daily_220711
+          work-daily-220721
         </h1>
 
         <div class="post-meta-container">
@@ -210,14 +207,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-07-11 09:33:36" itemprop="dateCreated datePublished" datetime="2022-07-11T09:33:36+08:00">2022-07-11</time>
+      <time title="创建时间：2022-07-21 09:08:44" itemprop="dateCreated datePublished" datetime="2022-07-21T09:08:44+08:00">2022-07-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-24 16:06:18" itemprop="dateModified" datetime="2022-07-24T16:06:18+08:00">2022-07-24</time>
+      <time title="修改时间：2022-07-31 07:26:09" itemprop="dateModified" datetime="2022-07-31T07:26:09+08:00">2022-07-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -239,73 +236,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><h4 id="RN打包静态库"><a href="#RN打包静态库" class="headerlink" title="RN打包静态库"></a>RN打包静态库</h4><blockquote>
-<p>查看依赖的命令，下面是同一个命令<br>npx react-native config<br>node &#x2F;Users&#x2F;dengjinlong&#x2F;Documents&#x2F;1-rn&#x2F;AwesomeProject&#x2F;node_modules&#x2F;@react-native-community&#x2F;cli&#x2F;build&#x2F;bin.js config</p>
-<p>需要写一个脚本把header拷贝到项目中<br>获取xcode环境变量 (勾选show environment variables), 也可以使用xcodebuild<br><img src="/imgs/xcode_show_env_var.webp"><br>需要一个脚本把link library 填上，因为pod不会自动合成静态库，需要手动link</p>
-<p>rn集成flipper工具时有两个动态库的依赖。glog &amp;  OpenSSL<br>而且静态库包体积增加了200M，包含了多个arch代码</p>
-</blockquote>
-<h4 id="RN-lint-经常报奇怪的错误"><a href="#RN-lint-经常报奇怪的错误" class="headerlink" title="RN lint 经常报奇怪的错误"></a>RN lint 经常报奇怪的错误</h4><p>因为后缀名不能错，必须要是jsx或tsx</p>
-<h4 id="react-native-classroom"><a href="#react-native-classroom" class="headerlink" title="react-native-classroom"></a>react-native-classroom</h4><blockquote>
-<p>下载了极客时间的RN项目react-native-classroom，无法运行起来。<br>这个项目包含常用的第三方库和最佳实践。</p>
-<p>Codegen编译错误<br><img src="/imgs/xcode_rn_React-Codegen_build_err.webp"></p>
-<p>参考官方0.69工程，发现codegen生成的代码有问题。把多余代码删除了。<br>然后react-native-flipper编译报错。调试用的。删掉，然后可以运行了。</p>
-</blockquote>
-<blockquote>
-<p>react-native-classroom使用的依赖</p>
-</blockquote>
-<pre><code>&quot;graphql&quot;
-&quot;@apollo/client&quot;  A fully-featured caching GraphQL client.
-&quot;apollo3-cache-persist&quot;   Simple persistence for all Apollo cache implementations
-&quot;@react-native-async-storage/async-storage&quot;   Asynchronous, persistent, key-value storage system for React Native.
-&quot;@react-native-masked-view/masked-view&quot;   在组件上添加模板
-&quot;@react-navigation/*&quot;     导航
-&quot;react-native-screens&quot;   和react-navigation 什么关系？https://reactnavigation.org/docs/2.x/react-native-screens/
-&quot;@sentry/react-native&quot;   统计
-&quot;axios&quot;   Promise based HTTP client for the browser and node.js
-&quot;color&quot;    Color conversion and manipulation with CSS string support
-&quot;expo&quot;   The Expo SDK
-&quot;expo-blur&quot;  A component that renders a native blur view on iOS and falls back to a semi-transparent view on Android. A common usage of this is for navigation bars, tab bars, and modals.
-&quot;expo-modules-core&quot; The core of Expo Modules architecture
-&quot;expo-status-bar&quot; Provides the same interface as the React Native StatusBar API, but with slightly different defaults to work great in Expo environments.
-&quot;faker&quot;   Generate massive amounts of fake contextual data
-&quot;miragejs&quot;  A client-side server to help you build, test and demo your JavaScript app
-&quot;react&quot;
-&quot;react-native&quot;
-&quot;react-native-code-push&quot;
-&quot;react-native-device-info&quot;
-&quot;react-native-echarts-wrapper&quot;
-&quot;react-native-gesture-handler&quot;
-&quot;react-native-mmkv&quot;
-&quot;react-native-pager-view&quot;
-&quot;react-native-paper&quot;
-&quot;react-native-reanimated&quot;
-&quot;react-native-safe-area-context&quot;
-&quot;react-native-tab-view&quot;
-&quot;react-native-uuid&quot;
-&quot;react-native-vector-icons&quot;
-&quot;react-native-webview&quot;
-&quot;react-query&quot;
-&quot;recyclerlistview&quot;
-&quot;mobx&quot;   Simple, scalable state management.
-&quot;@reduxjs/toolkit&quot;   The official, opinionated, batteries-included toolset for efficient Redux development
-&quot;react-redux&quot;
-&quot;redux&quot;
-&quot;seedrandom&quot;
-&quot;parse-link-header&quot;   Parses a link header and returns paging information for each contained link.
-&quot;querystring&quot;  Parse and stringify URL query strings
-&quot;url&quot;
-&quot;xtend&quot; Extend like a boss
-</code></pre>
-<h3 id="不懂就问"><a href="#不懂就问" class="headerlink" title="不懂就问"></a>不懂就问</h3><p>RN 使用 auto-linking 安装 native 依赖 <a href="https://github.com/react-native-community/cli/blob/main/docs/autolinking.md">-&gt;</a></p>
-<p>消除xcode中很多奇怪日志 <a href="https://stackoverflow.com/questions/37800790/hide-strange-unwanted-xcode-logs">-&gt;</a></p>
-<h3 id="想啥写啥"><a href="#想啥写啥" class="headerlink" title="想啥写啥"></a>想啥写啥</h3><p>今天工作内容</p>
+        <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><h4 id="RN-iOS-style-data-picker"><a href="#RN-iOS-style-data-picker" class="headerlink" title="RN iOS style data picker"></a>RN iOS style data picker</h4><p>现在需要选择一个scroll data picker。功能不复杂，但要保持iOS和安卓样式统一。<br>所以需要纯js实现的，那就有点复杂了，涉及动画实现。<br>找来找去也就几个可选：</p>
 <ol>
-<li>完成脚本编写，自动打包静态库</li>
-<li>Typescript 入门</li>
-<li>集成react到项目中</li>
+<li><a href="https://github.com/react-native-picker/picker">react-native-picker&#x2F;picker</a> 两端不统一，可配置性低。原生控件效果好</li>
+<li><a href="https://github.com/keiya01/react-simple-wheel-picker">react-simple-wheel-picker</a> 长时间未更新，只支持react16</li>
+<li><a href="https://github.com/uynguyen/react-native-wheel-picker">@uynguyen505&#x2F;react-native-wheel-picker</a> 中国人写的，包体积最大，滚轮效果, 依赖1的iOSpicker</li>
+<li><a href="https://github.com/rheng001/react-native-wheel-scrollview-picker">react-native-wheel-scrollview-picker</a> 下载量最大，但是显示有问题。效果不好。</li>
 </ol>
-<p>项目目标是公司的rn移动平台</p>
-<p>下载了Flipper调试工具，又要学一个新软件。体验了一下，还不如chrome。项目停滞了一样。</p>
+<h4 id="RN自定义弹框"><a href="#RN自定义弹框" class="headerlink" title="RN自定义弹框"></a>RN自定义弹框</h4><p>react-native-dialog 可以参考一下，实现弹框动画, 这个库意义不大。<br>经过半天改造，我实现了一个组件可以实现上下左右中间弹出视图的功能。</p>
+<h4 id="RN动画库"><a href="#RN动画库" class="headerlink" title="RN动画库"></a>RN动画库</h4><p>还需要一个动画库  别人总结的常用<a href="https://juejin.cn/post/6962048905064218660#heading-4">动画库</a><br>react-native-reanimated 是用来替换官方的API<br><a href="https://github.com/oblador/react-native-animatable">react-native-animatable</a>&amp; <a href="https://github.com/hayanisaid/rnal">React Native Animations Library (rnal)</a> 是提供简单的API<br>看下来只有 react-native-reanimated 保持更新</p>
+<h3 id="不懂就问"><a href="#不懂就问" class="headerlink" title="不懂就问"></a>不懂就问</h3><h3 id="想啥写啥"><a href="#想啥写啥" class="headerlink" title="想啥写啥"></a>想啥写啥</h3><p>早上开车听管理演讲学到一个词：业务价值</p>
+<p>管理的担当: 保证完成任务拿到结果，不是承当责任</p>
+<p>花了几天时间熟悉ts，写了几个简单页面。看了眼第三方库，其中涉及js和react的核心功能我不是很熟悉。<br>要花时间深入学习一下。在家也看文档写代码，爱人问我你的工作在公司做不完吗？我说我要做整个模块，东西比较多。<br>我不能只做完需求，我还要完成文档，还要深入原理。</p>
+<p>早上演讲也提到：有价值的需求只十分之一，只做其一。但我的工作是这样。我只能先做好工作。再考虑其他有价值的事。<br>想想我现在做的事情挺有价值的，其实我是在做框架。可以复制到其他项目的。</p>
+<p>那些说自己是iOS工程师，android工程师的。把自己圈在某个细分领域。我们是软件工程师，<br>只要是软件，我们都应该会做。很多时候只是看看文档就可以开始开发了。</p>
 
     </div>
 
@@ -319,13 +263,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/07/08/work-daily-220708/" rel="prev" title="work_daily_220708">
-                  <i class="fa fa-chevron-left"></i> work_daily_220708
+                <a href="/2022/07/20/work-daily-220720/" rel="prev" title="work-daily-220720">
+                  <i class="fa fa-chevron-left"></i> work-daily-220720
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/07/12/work-daily-220712/" rel="next" title="work_daily_220112">
-                  work_daily_220112 <i class="fa fa-chevron-right"></i>
+                <a href="/2022/07/22/work-daily-220722/" rel="next" title="work-daily-220722">
+                  work-daily-220722 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

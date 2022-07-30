@@ -1,3 +1,4 @@
+#!/bin/sh
 for file in ./*.png
 do
     tmp=${file##*/}

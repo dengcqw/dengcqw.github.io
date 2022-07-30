@@ -20,17 +20,16 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"dengcqw.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="技术踩坑RN打包静态库 查看依赖的命令，下面是同一个命令npx react-native confignode &#x2F;Users&#x2F;dengjinlong&#x2F;Documents&#x2F;1-rn&#x2F;AwesomeProject&#x2F;node_modules&#x2F;@react-native-community&#x2F;cli&#x2F;build&amp;#x2">
+    <meta name="description" content="技术踩坑打了个测试包，花了10分钟。昨晚打了个包，今天上发给测试同事，然后crash“This app has crashed because it attempted to access privacy-sensitive data without a usage description.The app’s Info.plist must contain an NSMicrophoneUsage">
 <meta property="og:type" content="article">
-<meta property="og:title" content="work_daily_220711">
-<meta property="og:url" content="https://dengcqw.github.io/2022/07/11/work-daily-220711/index.html">
+<meta property="og:title" content="work-daily-220718">
+<meta property="og:url" content="https://dengcqw.github.io/2022/07/18/work-daily-220718/index.html">
 <meta property="og:site_name" content="Deng&#39;s Technique Blogs">
-<meta property="og:description" content="技术踩坑RN打包静态库 查看依赖的命令，下面是同一个命令npx react-native confignode &#x2F;Users&#x2F;dengjinlong&#x2F;Documents&#x2F;1-rn&#x2F;AwesomeProject&#x2F;node_modules&#x2F;@react-native-community&#x2F;cli&#x2F;build&amp;#x2">
+<meta property="og:description" content="技术踩坑打了个测试包，花了10分钟。昨晚打了个包，今天上发给测试同事，然后crash“This app has crashed because it attempted to access privacy-sensitive data without a usage description.The app’s Info.plist must contain an NSMicrophoneUsage">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://dengcqw.github.io/imgs/xcode_show_env_var.webp">
-<meta property="og:image" content="https://dengcqw.github.io/imgs/xcode_rn_React-Codegen_build_err.webp">
-<meta property="article:published_time" content="2022-07-11T01:33:36.000Z">
-<meta property="article:modified_time" content="2022-07-24T08:06:18.590Z">
+<meta property="og:image" content="https://dengcqw.github.io/imgs/xcode_infoplist_setting.webp">
+<meta property="article:published_time" content="2022-07-18T01:19:32.000Z">
+<meta property="article:modified_time" content="2022-07-30T23:26:09.102Z">
 <meta property="article:author" content="DengJinlong">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="computer">
@@ -41,17 +40,17 @@
 <meta property="article:tag" content="软件">
 <meta property="article:tag" content="Software">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://dengcqw.github.io/imgs/xcode_show_env_var.webp">
+<meta name="twitter:image" content="https://dengcqw.github.io/imgs/xcode_infoplist_setting.webp">
 
 
-<link rel="canonical" href="https://dengcqw.github.io/2022/07/11/work-daily-220711/">
+<link rel="canonical" href="https://dengcqw.github.io/2022/07/18/work-daily-220718/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dengcqw.github.io/2022/07/11/work-daily-220711/","path":"2022/07/11/work-daily-220711/","title":"work_daily_220711"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dengcqw.github.io/2022/07/18/work-daily-220718/","path":"2022/07/18/work-daily-220718/","title":"work-daily-220718"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>work_daily_220711 | Deng's Technique Blogs</title>
+<title>work-daily-220718 | Deng's Technique Blogs</title>
   
 
 
@@ -120,7 +119,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E8%B8%A9%E5%9D%91"><span class="nav-number">1.</span> <span class="nav-text">技术踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RN%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text">RN打包静态库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RN-lint-%E7%BB%8F%E5%B8%B8%E6%8A%A5%E5%A5%87%E6%80%AA%E7%9A%84%E9%94%99%E8%AF%AF"><span class="nav-number">1.2.</span> <span class="nav-text">RN lint 经常报奇怪的错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react-native-classroom"><span class="nav-number">1.3.</span> <span class="nav-text">react-native-classroom</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E6%87%82%E5%B0%B1%E9%97%AE"><span class="nav-number">2.</span> <span class="nav-text">不懂就问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%B3%E5%95%A5%E5%86%99%E5%95%A5"><span class="nav-number">3.</span> <span class="nav-text">想啥写啥</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E8%B8%A9%E5%9D%91"><span class="nav-number">1.</span> <span class="nav-text">技术踩坑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E6%87%82%E5%B0%B1%E9%97%AE"><span class="nav-number">2.</span> <span class="nav-text">不懂就问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%B3%E5%95%A5%E5%86%99%E5%95%A5"><span class="nav-number">3.</span> <span class="nav-text">想啥写啥</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -181,7 +180,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://dengcqw.github.io/2022/07/11/work-daily-220711/">
+    <link itemprop="mainEntityOfPage" href="https://dengcqw.github.io/2022/07/18/work-daily-220718/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -194,12 +193,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="work_daily_220711 | Deng's Technique Blogs">
+      <meta itemprop="name" content="work-daily-220718 | Deng's Technique Blogs">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          work_daily_220711
+          work-daily-220718
         </h1>
 
         <div class="post-meta-container">
@@ -210,14 +209,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-07-11 09:33:36" itemprop="dateCreated datePublished" datetime="2022-07-11T09:33:36+08:00">2022-07-11</time>
+      <time title="创建时间：2022-07-18 09:19:32" itemprop="dateCreated datePublished" datetime="2022-07-18T09:19:32+08:00">2022-07-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-24 16:06:18" itemprop="dateModified" datetime="2022-07-24T16:06:18+08:00">2022-07-24</time>
+      <time title="修改时间：2022-07-31 07:26:09" itemprop="dateModified" datetime="2022-07-31T07:26:09+08:00">2022-07-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -239,73 +238,23 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><h4 id="RN打包静态库"><a href="#RN打包静态库" class="headerlink" title="RN打包静态库"></a>RN打包静态库</h4><blockquote>
-<p>查看依赖的命令，下面是同一个命令<br>npx react-native config<br>node &#x2F;Users&#x2F;dengjinlong&#x2F;Documents&#x2F;1-rn&#x2F;AwesomeProject&#x2F;node_modules&#x2F;@react-native-community&#x2F;cli&#x2F;build&#x2F;bin.js config</p>
-<p>需要写一个脚本把header拷贝到项目中<br>获取xcode环境变量 (勾选show environment variables), 也可以使用xcodebuild<br><img src="/imgs/xcode_show_env_var.webp"><br>需要一个脚本把link library 填上，因为pod不会自动合成静态库，需要手动link</p>
-<p>rn集成flipper工具时有两个动态库的依赖。glog &amp;  OpenSSL<br>而且静态库包体积增加了200M，包含了多个arch代码</p>
-</blockquote>
-<h4 id="RN-lint-经常报奇怪的错误"><a href="#RN-lint-经常报奇怪的错误" class="headerlink" title="RN lint 经常报奇怪的错误"></a>RN lint 经常报奇怪的错误</h4><p>因为后缀名不能错，必须要是jsx或tsx</p>
-<h4 id="react-native-classroom"><a href="#react-native-classroom" class="headerlink" title="react-native-classroom"></a>react-native-classroom</h4><blockquote>
-<p>下载了极客时间的RN项目react-native-classroom，无法运行起来。<br>这个项目包含常用的第三方库和最佳实践。</p>
-<p>Codegen编译错误<br><img src="/imgs/xcode_rn_React-Codegen_build_err.webp"></p>
-<p>参考官方0.69工程，发现codegen生成的代码有问题。把多余代码删除了。<br>然后react-native-flipper编译报错。调试用的。删掉，然后可以运行了。</p>
-</blockquote>
+        <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><p>打了个测试包，花了10分钟。<br>昨晚打了个包，今天上发给测试同事，然后crash<br>“This app has crashed because it attempted to access privacy-sensitive data without a usage description.<br>The app’s Info.plist must contain an NSMicrophoneUsageDescription key with a string value explaining to the user how the app uses this data.”<br>“之前都测过了”，难道录音功能是刚添加上的？<br>我的测试机调试没崩溃，安装包也没崩溃，又是为什么呢？<br>又打了一个包，竟然没有把info修改带进去。又花了10多分钟。把ipa解压看看。确认没问题再上传。<br>但是没有NSMicrophoneUsageDescription，原来区分了debug和relase的info.plist<br><img src="/imgs/xcode_infoplist_setting.webp" alt="infoplist"><br>另一种方案是：使用shell脚本修改info.plist插入debug信息。</p>
+<p>iPhone12 拍摄视频 720P视频，全屏显示有裁剪的问题。宽高比不一样了。<br>以屏幕宽度为基准，计算出等比例的高度, 做为显示区域，可以参考手机拍照App。</p>
 <blockquote>
-<p>react-native-classroom使用的依赖</p>
+<p>iPhone 12&amp;Pro     390 x 844  1170 x 2532<br>iPhone 8 Plusx    414 × 736  1080 × 1920<br>iPhone 6          375 × 667  750 × 1334</p>
 </blockquote>
-<pre><code>&quot;graphql&quot;
-&quot;@apollo/client&quot;  A fully-featured caching GraphQL client.
-&quot;apollo3-cache-persist&quot;   Simple persistence for all Apollo cache implementations
-&quot;@react-native-async-storage/async-storage&quot;   Asynchronous, persistent, key-value storage system for React Native.
-&quot;@react-native-masked-view/masked-view&quot;   在组件上添加模板
-&quot;@react-navigation/*&quot;     导航
-&quot;react-native-screens&quot;   和react-navigation 什么关系？https://reactnavigation.org/docs/2.x/react-native-screens/
-&quot;@sentry/react-native&quot;   统计
-&quot;axios&quot;   Promise based HTTP client for the browser and node.js
-&quot;color&quot;    Color conversion and manipulation with CSS string support
-&quot;expo&quot;   The Expo SDK
-&quot;expo-blur&quot;  A component that renders a native blur view on iOS and falls back to a semi-transparent view on Android. A common usage of this is for navigation bars, tab bars, and modals.
-&quot;expo-modules-core&quot; The core of Expo Modules architecture
-&quot;expo-status-bar&quot; Provides the same interface as the React Native StatusBar API, but with slightly different defaults to work great in Expo environments.
-&quot;faker&quot;   Generate massive amounts of fake contextual data
-&quot;miragejs&quot;  A client-side server to help you build, test and demo your JavaScript app
-&quot;react&quot;
-&quot;react-native&quot;
-&quot;react-native-code-push&quot;
-&quot;react-native-device-info&quot;
-&quot;react-native-echarts-wrapper&quot;
-&quot;react-native-gesture-handler&quot;
-&quot;react-native-mmkv&quot;
-&quot;react-native-pager-view&quot;
-&quot;react-native-paper&quot;
-&quot;react-native-reanimated&quot;
-&quot;react-native-safe-area-context&quot;
-&quot;react-native-tab-view&quot;
-&quot;react-native-uuid&quot;
-&quot;react-native-vector-icons&quot;
-&quot;react-native-webview&quot;
-&quot;react-query&quot;
-&quot;recyclerlistview&quot;
-&quot;mobx&quot;   Simple, scalable state management.
-&quot;@reduxjs/toolkit&quot;   The official, opinionated, batteries-included toolset for efficient Redux development
-&quot;react-redux&quot;
-&quot;redux&quot;
-&quot;seedrandom&quot;
-&quot;parse-link-header&quot;   Parses a link header and returns paging information for each contained link.
-&quot;querystring&quot;  Parse and stringify URL query strings
-&quot;url&quot;
-&quot;xtend&quot; Extend like a boss
-</code></pre>
-<h3 id="不懂就问"><a href="#不懂就问" class="headerlink" title="不懂就问"></a>不懂就问</h3><p>RN 使用 auto-linking 安装 native 依赖 <a href="https://github.com/react-native-community/cli/blob/main/docs/autolinking.md">-&gt;</a></p>
-<p>消除xcode中很多奇怪日志 <a href="https://stackoverflow.com/questions/37800790/hide-strange-unwanted-xcode-logs">-&gt;</a></p>
-<h3 id="想啥写啥"><a href="#想啥写啥" class="headerlink" title="想啥写啥"></a>想啥写啥</h3><p>今天工作内容</p>
-<ol>
-<li>完成脚本编写，自动打包静态库</li>
-<li>Typescript 入门</li>
-<li>集成react到项目中</li>
-</ol>
-<p>项目目标是公司的rn移动平台</p>
-<p>下载了Flipper调试工具，又要学一个新软件。体验了一下，还不如chrome。项目停滞了一样。</p>
+<p>720P 定义: 720p is the standard high-definition (HD) display resolution of 1280x720 pixels, with progressive scanning, at a 16x9 aspect ratio.</p>
+<h3 id="不懂就问"><a href="#不懂就问" class="headerlink" title="不懂就问"></a>不懂就问</h3><ul>
+<li><p>RN中使用 \n 换行符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Text&gt;</span><br><span class="line">  Hi&#123;&#x27;\n&#x27;&#125;</span><br><span class="line">  This is a test message.</span><br><span class="line">&lt;/Text&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>props传递的string 中换行符 怎么处理?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">If the text comes from a prop,</span><br><span class="line">make sure you pass it like this: &lt;Component text=&#123;&quot;Line1\nLine2&quot;&#125; /&gt;</span><br><span class="line">instead of &lt;Component text=&quot;Line1\nLine2&quot; /&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="想啥写啥"><a href="#想啥写啥" class="headerlink" title="想啥写啥"></a>想啥写啥</h3><p>代码格式化是个费时的事，每次要敲很多空格。所以需要找个好工具。<br>jsx，tsx 是 js代码里混了xml。需要专门的工具吧<br>试试这个吧 <a href="https://github.com/prettier/vim-prettier">vim-prettier</a><br>还有一个工具  <a href="https://vimawesome.com/plugin/vim-jsx-pretty">VIM-JSX-PRETTY</a></p>
+<p>ALE 也有Fix功能:  g:ale_fixers &amp; ALEFix</p>
+<p>前同事说“文件上传成功了”，发了个包给测试，但测试就没开始测。文件地址是404。<br>我看了他的代码，用了一个api是头文件里有，但文档里没有。算是一个快捷api，但是没有文档。<br>我要花时间帮他完成剩余的工作了。 <a href="https://help.aliyun.com/document_detail/94411.html">OSS 文档</a></p>
+<p>一个快餐一样(一次性)的需求，需要花精力吗？需要单元测试吗？需要solid吗？<br>雇主是怎么想？花最少的投资实现功能。至于界面之下的代码多么丑陋不重要，雇主又不看代码。</p>
 
     </div>
 
@@ -319,13 +268,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/07/08/work-daily-220708/" rel="prev" title="work_daily_220708">
-                  <i class="fa fa-chevron-left"></i> work_daily_220708
+                <a href="/2022/07/15/work-daily-220715/" rel="prev" title="work_daily_220715">
+                  <i class="fa fa-chevron-left"></i> work_daily_220715
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/07/12/work-daily-220712/" rel="next" title="work_daily_220112">
-                  work_daily_220112 <i class="fa fa-chevron-right"></i>
+                <a href="/2022/07/19/work-daily-220719/" rel="next" title="work-daily-220719">
+                  work-daily-220719 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
