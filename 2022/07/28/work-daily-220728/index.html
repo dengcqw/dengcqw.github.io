@@ -132,7 +132,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -238,7 +238,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><p>我在做工具<a href="https://github.com/dengcqw/APIModel">APIModel</a>，来完成昨天说的功能。遇到问题挺多的。</p>
+        <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><p>我在做工具<a target="_blank" rel="noopener" href="https://github.com/dengcqw/APIModel">APIModel</a>，来完成昨天说的功能。遇到问题挺多的。</p>
 <ol>
 <li><p>json 在ts里怎么定义类型<br><img src="/imgs/ts_any_object_error.webp" alt="webp"></p>
 <p> 布尔型：boolean<br> 数值型：number<br> 字符型：string<br> 数组：array<br> 对象：object<br> 元组（可以定义数组有几个成员）：tuple<br> 枚举：enum<br> 任意型（少用，赋值的时候会影响被赋值的元素）：any<br> 未知型(比any优秀)：unknown<br> 空型：void<br> 不存在的类型（常用来抛出错误）：never</p>
@@ -248,10 +248,10 @@
 </li>
 <li><p>module 错误</p>
 <blockquote>
-<p>“require() of ES Module pathto&#x2F;node_modules&#x2F;tempfile&#x2F;index.js from pathto&#x2F;GenerateSchema.ts not supported.”<br>tempfile 这个库报的错。我也不知道什么问题。网上也没查到<br>好像是esmodule和commonjs的问题。 oclif使用的是commonjs。很多库使用esmodule<br>找到一个大神的解释：<a href="https://stackoverflow.com/a/56348146">-&gt;</a></p>
+<p>“require() of ES Module pathto&#x2F;node_modules&#x2F;tempfile&#x2F;index.js from pathto&#x2F;GenerateSchema.ts not supported.”<br>tempfile 这个库报的错。我也不知道什么问题。网上也没查到<br>好像是esmodule和commonjs的问题。 oclif使用的是commonjs。很多库使用esmodule<br>找到一个大神的解释：<a target="_blank" rel="noopener" href="https://stackoverflow.com/a/56348146">-&gt;</a></p>
 </blockquote>
 </li>
-<li><p>Unexpected token ‘export’<br><a href="https://segmentfault.com/a/1190000019582600">-&gt;</a></p>
+<li><p>Unexpected token ‘export’<br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000019582600">-&gt;</a></p>
 </li>
 </ol>
 <p>换了一个库，一切正常了。浪费了几个小时。但也学到module相关知识。长时间不用还是会忘记。<br>经验教训是，一个库，不能用，换一个。npm很多没用的库。</p>
@@ -260,7 +260,7 @@
   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">async (): Promiss&lt;void&gt; =&gt; &#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>  需要反回promiss</p>
 </li>
-<li><p>ts文件中引入js模块<br><a href="https://juejin.cn/post/6844904112354492429">-&gt;</a></p>
+<li><p>ts文件中引入js模块<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904112354492429">-&gt;</a></p>
 </li>
 </ul>
 <h3 id="想啥写啥"><a href="#想啥写啥" class="headerlink" title="想啥写啥"></a>想啥写啥</h3><p>今天新来两个设计师，那可以设计出多少个需求，我们的需求到底有多少？<br>茶水间，每次都遇到后台同事在面试。</p>

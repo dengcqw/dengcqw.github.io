@@ -132,7 +132,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -241,11 +241,11 @@
         <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><ul>
 <li><p>cannot be used as JSX component<br> vim 编辑器对ReactNative 组件报错 “cannot be used as JSX component”<br><img src="/imgs/vim_tsx_componet_lint_error.webp" alt="img"><br>需要使用对应版本的 @type&#x2F;react</p>
 </li>
-<li><p>React Navigation<br>准备给RN项目添加导航了，官方有<a href="https://reactnative.dev/docs/navigation">推荐文档</a><br>领导是个纯粹的人，不想搞花里胡哨的东西。全部用RN来做，尽量不依赖原生平台。<br>所以只需要使用<a href="https://reactnavigation.org/">react-navigation</a> + react-native-screens + react-native-safe-area-context<br>React Navigation提供原生导航一样的体验。<br>@react-navigation&#x2F;native-stack 依赖 react-native-screens<br>带着问题去学习</p>
+<li><p>React Navigation<br>准备给RN项目添加导航了，官方有<a target="_blank" rel="noopener" href="https://reactnative.dev/docs/navigation">推荐文档</a><br>领导是个纯粹的人，不想搞花里胡哨的东西。全部用RN来做，尽量不依赖原生平台。<br>所以只需要使用<a target="_blank" rel="noopener" href="https://reactnavigation.org/">react-navigation</a> + react-native-screens + react-native-safe-area-context<br>React Navigation提供原生导航一样的体验。<br>@react-navigation&#x2F;native-stack 依赖 react-native-screens<br>带着问题去学习</p>
 <ol>
-<li>导航栏怎么配置<br>  <a href="https://reactnavigation.org/docs/native-stack-navigator/#options">Stack.Navigator.screenOptions</a></li>
+<li>导航栏怎么配置<br>  <a target="_blank" rel="noopener" href="https://reactnavigation.org/docs/native-stack-navigator/#options">Stack.Navigator.screenOptions</a></li>
 <li>页面怎么配置</li>
-<li>参数怎么传递（双向传递） <a href="https://reactnavigation.org/docs/hello-react-navigation#passing-additional-props">passing-additional-props</a></li>
+<li>参数怎么传递（双向传递） <a target="_blank" rel="noopener" href="https://reactnavigation.org/docs/hello-react-navigation#passing-additional-props">passing-additional-props</a></li>
 </ol>
 <ul>
 <li>React context</li>
@@ -257,15 +257,15 @@
 <ol start="4">
 <li>怎么操控stack</li>
 <li>导航容器有什么配置</li>
-<li>nested navigators 导航容器可以嵌套 <a href="https://reactnavigation.org/docs/params#passing-params-to-nested-navigators">传递参数要注意</a><br>  实现 tab，drawer 相关功能</li>
+<li>nested navigators 导航容器可以嵌套 <a target="_blank" rel="noopener" href="https://reactnavigation.org/docs/params#passing-params-to-nested-navigators">传递参数要注意</a><br>  实现 tab，drawer 相关功能</li>
 </ol>
 <p>还能实现top tabs功能，modal screen 也能实现，太强大了<br>@react-navigation&#x2F;material-top-tabs 依赖 react-native-tab-view react-native-pager-view</p>
 </li>
 </ul>
 <h3 id="不懂就问"><a href="#不懂就问" class="headerlink" title="不懂就问"></a>不懂就问</h3><ul>
-<li><p>typescript react 可以使用interface 和 type 定义props？优先用哪个？(参考<a href="https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example#more-advice">cheatsheet</a>)<br>interface 用于库的公开接口，可扩展，type 用于固定接口，不可扩展<br>大规模项目中，interface性能更好<br>功能上也有细微差别，参考cheatsheet</p>
+<li><p>typescript react 可以使用interface 和 type 定义props？优先用哪个？(参考<a target="_blank" rel="noopener" href="https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/basic_type_example#more-advice">cheatsheet</a>)<br>interface 用于库的公开接口，可扩展，type 用于固定接口，不可扩展<br>大规模项目中，interface性能更好<br>功能上也有细微差别，参考cheatsheet</p>
 </li>
-<li><p>不推荐使用React.FC&#x2F;React.FunctionComponent的原因(参考<a href="https://github.com/facebook/create-react-app/pull/8177">文档</a>)</p>
+<li><p>不推荐使用React.FC&#x2F;React.FunctionComponent的原因(参考<a target="_blank" rel="noopener" href="https://github.com/facebook/create-react-app/pull/8177">文档</a>)</p>
 <ul>
 <li>隐含children定义</li>
 <li>不支持泛型</li>
@@ -282,9 +282,9 @@
 <li>hooks</li>
 </ul>
 </li>
-<li><p><a href="https://github.com/bvaughn/react-error-boundary">react-error-boundary</a><br>捕获render错误并恢复</p>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/bvaughn/react-error-boundary">react-error-boundary</a><br>捕获render错误并恢复</p>
 </li>
-<li><p>js&#x2F;ts 需要分号吗？还是有学问的。<br>Javascript 需要分号吗？ Typescript需要分号吗？<br>js&#x2F;ts 可以不添加分号 参考<a href="https://262.ecma-international.org/#sec-automatic-semicolon-insertion">automatic-semicolon-insertion</a><br>建议使用分号 参考<a href="https://github.com/olliahonen/should-i-use-semicolons-ts">should-i-use-semicolons-ts</a></p>
+<li><p>js&#x2F;ts 需要分号吗？还是有学问的。<br>Javascript 需要分号吗？ Typescript需要分号吗？<br>js&#x2F;ts 可以不添加分号 参考<a target="_blank" rel="noopener" href="https://262.ecma-international.org/#sec-automatic-semicolon-insertion">automatic-semicolon-insertion</a><br>建议使用分号 参考<a target="_blank" rel="noopener" href="https://github.com/olliahonen/should-i-use-semicolons-ts">should-i-use-semicolons-ts</a></p>
 </li>
 <li><p>import 两种写法</p>
 <blockquote>

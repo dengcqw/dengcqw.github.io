@@ -130,7 +130,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -238,7 +238,7 @@
     <div class="post-body" itemprop="articleBody">
         <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><h4 id="视频拍摄实时水印"><a href="#视频拍摄实时水印" class="headerlink" title="视频拍摄实时水印"></a>视频拍摄实时水印</h4><h5 id="生成水印图片"><a href="#生成水印图片" class="headerlink" title="生成水印图片"></a>生成水印图片</h5><ul>
 <li>方法一 使用UIKit<br>  CALayer 的方法renderInContext可以在CGContext绘制内容</li>
-<li>方法二 使用CoreGraphic<br>  找了好就久，找到这个<a href="https://juejin.cn/post/6856567623615217672">CGContext的变换过程详解</a>。CG是很老的东西了吗？<br>  直接使用NSString, UIImage的draw方法在CGContext上绘制<br>总结：方法一性能比方法二好，前者要0.01s-0.02s，后者稳定在0.01s以下</li>
+<li>方法二 使用CoreGraphic<br>  找了好就久，找到这个<a target="_blank" rel="noopener" href="https://juejin.cn/post/6856567623615217672">CGContext的变换过程详解</a>。CG是很老的东西了吗？<br>  直接使用NSString, UIImage的draw方法在CGContext上绘制<br>总结：方法一性能比方法二好，前者要0.01s-0.02s，后者稳定在0.01s以下</li>
 </ul>
 <h5 id="旋转图片"><a href="#旋转图片" class="headerlink" title="旋转图片"></a>旋转图片</h5><p>现在要旋转生成的图片，因为竖屏拍摄的视频内容是横屏的，通过断点调试查看图片发现的。</p>
 <ul>
@@ -255,7 +255,7 @@
 </li>
 <li><p>AVCaptureSessionPreset 可以修改设备拍摄的分辨率<br>  AVCaptureSessionPresetMedium（suitable for sharing over WiFi.）<br>  AVCaptureSessionPresetLow   （suitable for sharing over 3G.）<br>  AVCaptureSessionPreset960x540<br>  AVCaptureSessionPreset1280x720</p>
 </li>
-<li><p>输出视频的设置<br>找到一个库<a href="https://github.com/SergeyPetrachkov/SwiftyVideoExporter">SwiftyVideoExporter</a>，其中就有通过设置Video Settings改变输出视频相关参数。<br>Video Settings 没有找到明确的文档说明，专业做视频的人可能知道参数的含义。<br>通过打印查看</p>
+<li><p>输出视频的设置<br>找到一个库<a target="_blank" rel="noopener" href="https://github.com/SergeyPetrachkov/SwiftyVideoExporter">SwiftyVideoExporter</a>，其中就有通过设置Video Settings改变输出视频相关参数。<br>Video Settings 没有找到明确的文档说明，专业做视频的人可能知道参数的含义。<br>通过打印查看</p>
 <pre><code>  &#123;
       AVVideoCodecKey = avc1;
       AVVideoCompressionPropertiesKey =     &#123;

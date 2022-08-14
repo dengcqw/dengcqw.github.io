@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dengcqw.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="技术踩坑React Navigation 错误提示 ERROR  Warning: Cannot update a component (&#96;NativeStackNavigator&#96;) while rendering a different component (&#96;EditScreen&#96;). To locate the bad setState() call inside &#96;EditScreen&#96;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="work-daily-220805">
+<meta property="og:url" content="https://dengcqw.github.io/2022/08/05/work-daily-220805/index.html">
+<meta property="og:site_name" content="Deng&#39;s Technique Blogs">
+<meta property="og:description" content="技术踩坑React Navigation 错误提示 ERROR  Warning: Cannot update a component (&#96;NativeStackNavigator&#96;) while rendering a different component (&#96;EditScreen&#96;). To locate the bad setState() call inside &#96;EditScreen&#96;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-05T04:35:21.000Z">
+<meta property="article:modified_time" content="2022-08-14T10:18:12.972Z">
+<meta property="article:author" content="DengJinlong">
+<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="computer">
+<meta property="article:tag" content="思考">
+<meta property="article:tag" content="thinking">
+<meta property="article:tag" content="移动互联网">
+<meta property="article:tag" content="mobile internet">
+<meta property="article:tag" content="软件">
+<meta property="article:tag" content="Software">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dengcqw.github.io/2022/08/05/work-daily-220805/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dengcqw.github.io/2022/08/05/work-daily-220805/","path":"2022/08/05/work-daily-220805/","title":"work-daily-220805"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>work-daily-220805 | Deng's Technique Blogs</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Deng's Technique Blogs</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">邓小宝的技术博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E8%B8%A9%E5%9D%91"><span class="nav-number">1.</span> <span class="nav-text">技术踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#React-Navigation-%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA"><span class="nav-number">1.1.</span> <span class="nav-text">React Navigation 错误提示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React-Navigation-%E9%85%8D%E7%BD%AE%E5%AF%BC%E8%88%AA%E6%A0%8F"><span class="nav-number">1.2.</span> <span class="nav-text">React Navigation 配置导航栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#react-navigation-x2F-material-top-tabs-%E9%A1%B5%E9%9D%A2%E9%85%8D%E7%BD%AEbug"><span class="nav-number">1.3.</span> <span class="nav-text">@react-navigation&#x2F;material-top-tabs 页面配置bug</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React-Native-%E5%AE%89%E5%8D%93%E8%BF%90%E8%A1%8C%E5%A4%B1%E8%B4%A5"><span class="nav-number">1.4.</span> <span class="nav-text">React Native 安卓运行失败</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E6%87%82%E5%B0%B1%E9%97%AE"><span class="nav-number">2.</span> <span class="nav-text">不懂就问</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#redux-%E9%BB%98%E8%AE%A4%E6%B2%A1%E6%B7%BB%E5%8A%A0log%EF%BC%9F"><span class="nav-number">2.1.</span> <span class="nav-text">redux 默认没添加log？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js-%E6%AF%94%E8%BE%83boolean%E7%9A%84%E7%96%91%E6%83%91"><span class="nav-number">2.2.</span> <span class="nav-text">js 比较boolean的疑惑</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%B3%E5%95%A5%E5%86%99%E5%95%A5"><span class="nav-number">3.</span> <span class="nav-text">想啥写啥</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">DengJinlong</p>
+  <div class="site-description" itemprop="description">我也有个写作的梦想，还有大把时间，努力实现吧。I also have a dream about writing. A mount of time in the feature, it's never too late.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dengcqw.github.io/2022/08/05/work-daily-220805/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="DengJinlong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Deng's Technique Blogs">
+      <meta itemprop="description" content="我也有个写作的梦想，还有大把时间，努力实现吧。I also have a dream about writing. A mount of time in the feature, it's never too late.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="work-daily-220805 | Deng's Technique Blogs">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          work-daily-220805
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-08-05 12:35:21" itemprop="dateCreated datePublished" datetime="2022-08-05T12:35:21+08:00">2022-08-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-08-14 18:18:12" itemprop="dateModified" datetime="2022-08-14T18:18:12+08:00">2022-08-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/work/" itemprop="url" rel="index"><span itemprop="name">工作日记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><h4 id="React-Navigation-错误提示"><a href="#React-Navigation-错误提示" class="headerlink" title="React Navigation 错误提示"></a>React Navigation 错误提示</h4><font color='red'>
+ERROR  Warning: Cannot update a component (`NativeStackNavigator`) while rendering a different component (`EditScreen`). To locate the bad setState() call inside `EditScreen`, follow the stack trace as described in https://reactjs.org/link/setstate-in-render
+</font>
+
+<h4 id="React-Navigation-配置导航栏"><a href="#React-Navigation-配置导航栏" class="headerlink" title="React Navigation 配置导航栏"></a>React Navigation 配置导航栏</h4><ul>
+<li><p>下面方法不能放在函数组件里，会导致页面闪一下，需要放在React.useLayoutEffect里。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">navigation.setOptions(&#123;</span><br><span class="line">  headerRight: () =&gt; &lt;RightButton onPress=&#123;()=&gt;setEditable(true)&#125;/&gt;,</span><br><span class="line">  headerTitle: Strings.RequirementsEdit,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过screen options配置，可以从route.params获取需要参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;Stack.Screen</span><br><span class="line">  name=&quot;Profile&quot;</span><br><span class="line">  component=&#123;ProfileScreen&#125;</span><br><span class="line">  options=&#123;(&#123; route, navigation &#125;) =&gt; (&#123;</span><br><span class="line">    title: Strings.RequirementsEdit,</span><br><span class="line">    headerRight: () =&gt; &lt;RightButton onPress=&#123;()=&gt;setEditable(true)&#125;/&gt;,</span><br><span class="line">  &#125;)&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="react-navigation-x2F-material-top-tabs-页面配置bug"><a href="#react-navigation-x2F-material-top-tabs-页面配置bug" class="headerlink" title="@react-navigation&#x2F;material-top-tabs 页面配置bug"></a>@react-navigation&#x2F;material-top-tabs 页面配置bug</h4><p>使用下面配置screen，每次切换页面时会重新创建页面，导致页面闪一下。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;Tab.Navigator screenOptions=&#123;screenOptions&#125;&gt;</span><br><span class="line">  &lt;Stack.Screen name=&quot;Profile&quot; component=&#123;List&#125;/&gt;</span><br><span class="line">&lt;/Tab.Navigator&gt;</span><br><span class="line"></span><br><span class="line">// 需要改成jsx方式</span><br><span class="line">&lt;Tab.Screen name=&quot;rejected&quot;&gt;</span><br><span class="line">  &#123;(props) =&gt; &lt;List &#123;...props&#125;/&gt;&#125;</span><br><span class="line">&lt;/Tab.Screen&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="React-Native-安卓运行失败"><a href="#React-Native-安卓运行失败" class="headerlink" title="React Native 安卓运行失败"></a>React Native 安卓运行失败</h4><p>在官方工程里允许安卓，出现奇怪问题，之前成功运行过的。<br>运行命令：npx react-native run-anroid<br>出现失败原因：</p>
+<ol>
+<li>error: cannot find symbol ReactNativeConfig.DEFAULT_CONFIG<br>项目还不支持new arch，所以把相关初始化代码删除了，就可以编译了</li>
+<li>mmkv组件编译不过  因为google库下载失败了，网络问题<blockquote>
+<p>Task :react-native-mmkv:downloadDoubleConversion FAILED<br>Task :react-native-mmkv:downloadGlog FAILED<br>Task :react-native-mmkv:downloadFolly FAILED</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="不懂就问"><a href="#不懂就问" class="headerlink" title="不懂就问"></a>不懂就问</h3><h4 id="redux-默认没添加log？"><a href="#redux-默认没添加log？" class="headerlink" title="redux 默认没添加log？"></a>redux 默认没添加log？</h4><p>需要安装<a target="_blank" rel="noopener" href="https://github.com/LogRocket/redux-logger">redux-logger</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">export const store = configureStore(&#123;</span><br><span class="line">  reducer: &#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  middleware: (getDefaultMiddleware) =&gt; &#123;</span><br><span class="line">    let defaultM = getDefaultMiddleware()</span><br><span class="line">    if (process.env.NODE_ENV === `development`) &#123;</span><br><span class="line">      const &#123;logger&#125; = require(`redux-logger`)</span><br><span class="line">      return [...defaultM, logger]</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      return defaultM</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>其他文档<br><a target="_blank" rel="noopener" href="https://redux.js.org/understanding/history-and-design/middleware#problem-logging">Logging Middleware</a><br><a target="_blank" rel="noopener" href="https://github.com/lucasconstantino/react-inspect-props">react-inspect-props</a><br><a target="_blank" rel="noopener" href="https://github.com/reduxjs/redux-devtools/blob/main/extension/docs/Integrations.md#react">redux-devtools</a></p>
+<h4 id="js-比较boolean的疑惑"><a href="#js-比较boolean的疑惑" class="headerlink" title="js 比较boolean的疑惑"></a>js 比较boolean的疑惑</h4><p>下面写法对吗？状态一直不对<br>const [editable, setEditable] &#x3D; React.useState<boolean>(props.editable?true:false)<br>if (editable){}  和 editable?: 的写法只判断null&#x2F;undefined对象。不判断boolean，boolean对象也是对象。需要直接比较true&#x2F;false。</p>
+<h3 id="想啥写啥"><a href="#想啥写啥" class="headerlink" title="想啥写啥"></a>想啥写啥</h3><p>58某个RN开发的同事，水平可以的 他的<a target="_blank" rel="noopener" href="https://handsomeliuyang.github.io/">blog</a></p>
+<p>RN需要上传图片，我看了一下原生代码，有多个上传地址，我瞬间明白，后台也有多套代码。<br>感觉这样公司招多少人也不够用啊。各做各的，后期维护也是相当困难的。<br>我感觉自己被感动，是不是及时完成需求就可以，至于其他都不重要了呢。<br>代码越看越把我整不会了</p>
+<p>今天培训会上，讲师显示了一个ppt，显示公司年龄和学历的。一半的专科，十分之一不到的研究生。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/04/work-daily-220804/" rel="prev" title="work-daily-220804">
+                  <i class="fa fa-chevron-left"></i> work-daily-220804
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/08/08/work-daily-220808/" rel="next" title="work-daily-220808">
+                  work-daily-220808 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">DengJinlong</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

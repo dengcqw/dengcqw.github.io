@@ -130,7 +130,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -236,7 +236,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><h4 id="json转多语言的模型"><a href="#json转多语言的模型" class="headerlink" title="json转多语言的模型"></a>json转多语言的模型</h4><p><a href="https://github.com/quicktype/quicktype">quicktype</a> 把json 转成其他语言的模型类。是我们项目需要的工具。<br>这样简单的想法变成了一个热门开源项目。有些项目不复杂，只是实用而大受欢迎。<br>试了下很好用。但是有些小需求没有得到满足，比如增加注释，自定义继承类，设置默认值。<br>考虑在quicktype上定制功能。先把api json 转成json schema 再编辑schema增加description，再转modal就会有注释</p>
+        <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><h4 id="json转多语言的模型"><a href="#json转多语言的模型" class="headerlink" title="json转多语言的模型"></a>json转多语言的模型</h4><p><a target="_blank" rel="noopener" href="https://github.com/quicktype/quicktype">quicktype</a> 把json 转成其他语言的模型类。是我们项目需要的工具。<br>这样简单的想法变成了一个热门开源项目。有些项目不复杂，只是实用而大受欢迎。<br>试了下很好用。但是有些小需求没有得到满足，比如增加注释，自定义继承类，设置默认值。<br>考虑在quicktype上定制功能。先把api json 转成json schema 再编辑schema增加description，再转modal就会有注释</p>
 <ol>
 <li>先获取网站 token</li>
 <li>请求api json</li>
@@ -248,9 +248,9 @@
 </ol>
 <p>“rap.xxx.com:8080” 这个地址可以在chrome中打开，但在axios请求时把地址找不到。先改成ip访问。</p>
 <h3 id="不懂就问"><a href="#不懂就问" class="headerlink" title="不懂就问"></a>不懂就问</h3><ul>
-<li><p><a href="https://json-schema.org/learn/getting-started-step-by-step">json schema</a>是什么<br>定义json的json</p>
+<li><p><a target="_blank" rel="noopener" href="https://json-schema.org/learn/getting-started-step-by-step">json schema</a>是什么<br>定义json的json</p>
 </li>
-<li><p>项目如何开始使用<a href="https://www.typescriptlang.org/">typescript</a><br>  这个网站列了些项目的启动工具，自带ts  <a href="https://www.typescriptlang.org/docs/bootstrap">-&gt;</a><br>  其中<a href="https://oclif.io/">oclif</a> 是个 command line tools<br>  看了oclif的package.json, 有个build脚本，是不是说明ts项目都要先编译再执行。不能直接执行。<br>  每个ts文件会编译成两个文件 一个符号文件index.d.ts 一个js文件 index.js</p>
+<li><p>项目如何开始使用<a target="_blank" rel="noopener" href="https://www.typescriptlang.org/">typescript</a><br>  这个网站列了些项目的启动工具，自带ts  <a target="_blank" rel="noopener" href="https://www.typescriptlang.org/docs/bootstrap">-&gt;</a><br>  其中<a target="_blank" rel="noopener" href="https://oclif.io/">oclif</a> 是个 command line tools<br>  看了oclif的package.json, 有个build脚本，是不是说明ts项目都要先编译再执行。不能直接执行。<br>  每个ts文件会编译成两个文件 一个符号文件index.d.ts 一个js文件 index.js</p>
 </li>
 </ul>
 <h3 id="想啥写啥"><a href="#想啥写啥" class="headerlink" title="想啥写啥"></a>想啥写啥</h3><p>一分代码拷贝了五份。有没有可能是手写了五份。应该不是，代码完全一样。是个高手。</p>

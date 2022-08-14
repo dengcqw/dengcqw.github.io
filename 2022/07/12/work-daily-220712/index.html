@@ -133,7 +133,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -240,21 +240,21 @@
     
     <div class="post-body" itemprop="articleBody">
         <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><h4 id="RN-app-提示bundle-url错误"><a href="#RN-app-提示bundle-url错误" class="headerlink" title="RN app 提示bundle url错误"></a>RN app 提示bundle url错误</h4><blockquote>
-<p>我的电脑8081端口被不知名应用占用了。<br>RCTBundlerURLProvider 默认是8081 定义在kRCTBundleURLProviderDefaultPort<br>使用下面接口判断metro是否启动<br><a href="http://localhost:8081/status">http://localhost:8081/status</a><br>所以报错没有设置地址</p>
+<p>我的电脑8081端口被不知名应用占用了。<br>RCTBundlerURLProvider 默认是8081 定义在kRCTBundleURLProviderDefaultPort<br>使用下面接口判断metro是否启动<br><a target="_blank" rel="noopener" href="http://localhost:8081/status">http://localhost:8081/status</a><br>所以报错没有设置地址</p>
 <p>可以建一个ip.txt文件放mainbundle下, 写入 “127.0.0.1:8082”<br><img src="/imgs/xcode_rn_debugip.webp"></p>
 </blockquote>
 <h4 id="RN-import-错误"><a href="#RN-import-错误" class="headerlink" title="RN import 错误"></a>RN import 错误</h4><blockquote>
 <p>jsx 后缀无法识别，被识别成目录了，需要改为js<br>error: Error: Unable to resolve module .&#x2F;src&#x2F;04_State&#x2F;App.jsx<br>“import App from ‘.&#x2F;src&#x2F;04_State&#x2F;App.jsx’;”<br>因为这个模块有一个文件是tsx类型？</p>
 </blockquote>
 <h4 id="fetch-函数-请求接口有缓存"><a href="#fetch-函数-请求接口有缓存" class="headerlink" title="fetch 函数 请求接口有缓存"></a>fetch 函数 请求接口有缓存</h4><p>应该有参数禁用缓存，实际开发中缓存用的不多，都需要实时数据。</p>
-<h3 id="不懂就问"><a href="#不懂就问" class="headerlink" title="不懂就问"></a>不懂就问</h3><h4 id="js-函数参数里的大括号是什么意思？-gt"><a href="#js-函数参数里的大括号是什么意思？-gt" class="headerlink" title="js 函数参数里的大括号是什么意思？ -&gt;"></a>js 函数参数里的大括号是什么意思？ <a href="https://segmentfault.com/q/1010000017062649">-&gt;</a></h4><p>function Category({category}){}<br>简单的es6 解构语法。 好处是：方便扩展, 可以只取需要的内容，不用考虑参数顺序。</p>
+<h3 id="不懂就问"><a href="#不懂就问" class="headerlink" title="不懂就问"></a>不懂就问</h3><h4 id="js-函数参数里的大括号是什么意思？-gt"><a href="#js-函数参数里的大括号是什么意思？-gt" class="headerlink" title="js 函数参数里的大括号是什么意思？ -&gt;"></a>js 函数参数里的大括号是什么意思？ <a target="_blank" rel="noopener" href="https://segmentfault.com/q/1010000017062649">-&gt;</a></h4><p>function Category({category}){}<br>简单的es6 解构语法。 好处是：方便扩展, 可以只取需要的内容，不用考虑参数顺序。</p>
 <h4 id="RCTBridge怎么复用？"><a href="#RCTBridge怎么复用？" class="headerlink" title="RCTBridge怎么复用？"></a>RCTBridge怎么复用？</h4><p>对于原生app内嵌RN，每个页面初始化一个新RCTBridge的实例<br>通过预先加载基础包实现页面加速，并缓存bridge实例<br>以前我以为整个app可以复用一个bridge，这会导致bridge里的js代码会增加<br>好处是可以方便的复用数据。纯RN app不就是只有一个bridge嘛</p>
 <h4 id="vim-对ts-amp-js的支持"><a href="#vim-对ts-amp-js的支持" class="headerlink" title="vim 对ts&amp;js的支持"></a>vim 对ts&amp;js的支持</h4><p>vim 对js和ts有补全和格式提示<br>ALE提供的格式, lint功能<br>YouCompleteMe提供的补全功能</p>
-<h4 id="react-query"><a href="#react-query" class="headerlink" title="react-query"></a><a href="https://tanstack.com/query/v4/docs/overview">react-query</a></h4><p>又一个大型库要了解<br>React Query is often described as the missing data-fetching library for React, but in more technical terms, it makes fetching, caching, synchronizing and updating server state in your React applications a breeze.</p>
+<h4 id="react-query"><a href="#react-query" class="headerlink" title="react-query"></a><a target="_blank" rel="noopener" href="https://tanstack.com/query/v4/docs/overview">react-query</a></h4><p>又一个大型库要了解<br>React Query is often described as the missing data-fetching library for React, but in more technical terms, it makes fetching, caching, synchronizing and updating server state in your React applications a breeze.</p>
 <h4 id="yarn和npm不能混用"><a href="#yarn和npm不能混用" class="headerlink" title="yarn和npm不能混用"></a>yarn和npm不能混用</h4><p>安装一个js库，会引出一堆dependency conflict err<br>是我错了，项目使用的是yarn。我用npm就会报上面错误。</p>
 <h4 id="react-native-reanimated"><a href="#react-native-reanimated" class="headerlink" title="react-native-reanimated"></a>react-native-reanimated</h4><p>react-native-reanimated demo 运行报错了，我没有改demo代码。目前没有能力和时间深究。<br><img src="/imgs/rn_reanimated_err.webp"></p>
 <h4 id="SafeArea"><a href="#SafeArea" class="headerlink" title="SafeArea"></a>SafeArea</h4><blockquote>
-<p>react-native 中 SafeAreaView 和 react-native-safe-area-context的区别。 <a href="https://stackoverflow.com/a/61887662">-&gt;</a></p>
+<p>react-native 中 SafeAreaView 和 react-native-safe-area-context的区别。 <a target="_blank" rel="noopener" href="https://stackoverflow.com/a/61887662">-&gt;</a></p>
 </blockquote>
 <h3 id="想啥写啥"><a href="#想啥写啥" class="headerlink" title="想啥写啥"></a>想啥写啥</h3><p>今日工作(都无法完成)</p>
 <ol>

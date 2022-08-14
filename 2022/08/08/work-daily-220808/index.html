@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dengcqw.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="技术踩坑使用 rn-fetch-blob 遇到的问题UIImagePickerController 进行相机交互后出现UI冻结&#x2F;App假死状态，需要使用overFullScreen -&gt; 123let picker &#x3D; UIImagePickerController()picker.modalPresentationStyle &#x3D; .overFullScreen &lt;- 这里s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="work-daily-220808">
+<meta property="og:url" content="https://dengcqw.github.io/2022/08/08/work-daily-220808/index.html">
+<meta property="og:site_name" content="Deng&#39;s Technique Blogs">
+<meta property="og:description" content="技术踩坑使用 rn-fetch-blob 遇到的问题UIImagePickerController 进行相机交互后出现UI冻结&#x2F;App假死状态，需要使用overFullScreen -&gt; 123let picker &#x3D; UIImagePickerController()picker.modalPresentationStyle &#x3D; .overFullScreen &lt;- 这里s">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dengcqw.github.io/imgs/rn_android_native_modules_changed.webp">
+<meta property="og:image" content="https://dengcqw.github.io/imgs/rn_android_app_variable_setting.webp">
+<meta property="og:image" content="https://dengcqw.github.io/imgs/rn_android_config_empty.webp">
+<meta property="article:published_time" content="2022-08-08T06:01:32.000Z">
+<meta property="article:modified_time" content="2022-08-14T10:18:12.972Z">
+<meta property="article:author" content="DengJinlong">
+<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="computer">
+<meta property="article:tag" content="思考">
+<meta property="article:tag" content="thinking">
+<meta property="article:tag" content="移动互联网">
+<meta property="article:tag" content="mobile internet">
+<meta property="article:tag" content="软件">
+<meta property="article:tag" content="Software">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dengcqw.github.io/imgs/rn_android_native_modules_changed.webp">
+
+
+<link rel="canonical" href="https://dengcqw.github.io/2022/08/08/work-daily-220808/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dengcqw.github.io/2022/08/08/work-daily-220808/","path":"2022/08/08/work-daily-220808/","title":"work-daily-220808"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>work-daily-220808 | Deng's Technique Blogs</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Deng's Technique Blogs</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">邓小宝的技术博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E8%B8%A9%E5%9D%91"><span class="nav-number">1.</span> <span class="nav-text">技术踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-rn-fetch-blob-%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">使用 rn-fetch-blob 遇到的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Android-%E9%9B%86%E6%88%90ReactNative"><span class="nav-number">1.2.</span> <span class="nav-text">Android 集成ReactNative</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E6%87%82%E5%B0%B1%E9%97%AE"><span class="nav-number">2.</span> <span class="nav-text">不懂就问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%B3%E5%95%A5%E5%86%99%E5%95%A5"><span class="nav-number">3.</span> <span class="nav-text">想啥写啥</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">DengJinlong</p>
+  <div class="site-description" itemprop="description">我也有个写作的梦想，还有大把时间，努力实现吧。I also have a dream about writing. A mount of time in the feature, it's never too late.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dengcqw.github.io/2022/08/08/work-daily-220808/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="DengJinlong">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Deng's Technique Blogs">
+      <meta itemprop="description" content="我也有个写作的梦想，还有大把时间，努力实现吧。I also have a dream about writing. A mount of time in the feature, it's never too late.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="work-daily-220808 | Deng's Technique Blogs">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          work-daily-220808
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-08-08 14:01:32" itemprop="dateCreated datePublished" datetime="2022-08-08T14:01:32+08:00">2022-08-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-08-14 18:18:12" itemprop="dateModified" datetime="2022-08-14T18:18:12+08:00">2022-08-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/work/" itemprop="url" rel="index"><span itemprop="name">工作日记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><h4 id="使用-rn-fetch-blob-遇到的问题"><a href="#使用-rn-fetch-blob-遇到的问题" class="headerlink" title="使用 rn-fetch-blob 遇到的问题"></a>使用 rn-fetch-blob 遇到的问题</h4><p>UIImagePickerController 进行相机交互后出现UI冻结&#x2F;App假死状态，需要使用overFullScreen <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8140a896b616">-&gt;</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let picker = UIImagePickerController()</span><br><span class="line">picker.modalPresentationStyle = .overFullScreen &lt;- 这里</span><br><span class="line">self?.navigationController?.present(picker, animated: true, completion: nil)</span><br></pre></td></tr></table></figure>
+<p>iOS 14新的api(PHPickerViewController)没有类似问题。</p>
+<p>从相册选择文件的路径是 <font color='red'>file:&#x2F;&#x2F;&#x2F;(…略)&#x2F;tmp&#x2F;D67DA8F7-963A-4B68-9B08-71E8EDE2140B.png </font><br>我记得这个叫-[NSURL filePathURL]。无法使用NSFileManager 处理，要出去掉前缀file:&#x2F;&#x2F;。</p>
+<h4 id="Android-集成ReactNative"><a href="#Android-集成ReactNative" class="headerlink" title="Android 集成ReactNative"></a>Android 集成ReactNative</h4><p>还没开始编译就失败了<br><font color='red'>Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed: </font><br><font color='red'>node_modules&#x2F;@react-native-community&#x2F;cli-platform-android&#x2F;native_modules.gradle’ line: 313</font><br>我新建一个react native 工程，对比了两个文件，发现我的文件被我修改了。因为我不小心删了安卓工程里variables<br><img src="/imgs/rn_android_native_modules_changed.webp" alt="webp"></p>
+<p>这两个variables 哪里来的也还不清楚。我对安卓不熟悉。<br><img src="/imgs/rn_android_app_variable_setting.webp" alt="webp"><br>那么Project Structure 的 Variables修改没有存git？为什么。</p>
+<p><img src="/imgs/rn_android_config_empty.webp" alt="webp"><br>这个命令没找到的问题。在集成iOS时遇到过，是react native config 命令，可以列出安装第三方库的iOS和android工程。打开native_modules.gradle找到执行位置，然后打印路径才发现是路径不对。我直接把官方模块放在我们安卓项目下，原脚本是用在官方模板里，需要修改命令路径。我把gradle拷贝出来，修改路径，后配置到安卓工程里。竟然也是可以了。（知道后感觉很容易，查这个问题时都快抑郁了）<br>修改如下：def cliPath &#x3D; this.getCommandOutput(nodeCommand, new File(this.root, “jtreact”))<br>看了从源码深入探究react-native 0.60 的autolink过程<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904177068408846">-&gt;</a>，其中目录结构很关键。</p>
+<p><font color='red'>com.facebook.react.PackageList cannot resolve or not linked</font> <a target="_blank" rel="noopener" href="https://github.com/MohGovIL/hamagen-react-native/issues/178">-&gt;</a></p>
+<blockquote>
+<p>React Native 自动寻找build.gradle文件对应目录下的build目录。<br>把applyNativeModulesAppBuildGradle方法放到项目下build.gradle里执行。</p>
+</blockquote>
+<h3 id="不懂就问"><a href="#不懂就问" class="headerlink" title="不懂就问"></a>不懂就问</h3><p>在android当前工程里新建module</p>
+<blockquote>
+<p>新建一个module 但是没有工程列表里，其实是新建了一个目录和gradle文件<br>可以单独打开这个module项目，或者要添加依赖到现有项目</p>
+</blockquote>
+<p>Android安装APP失败: INSTALL_FAILED_TEST_ONLY <a target="_blank" rel="noopener" href="https://blog.csdn.net/aikongmeng/article/details/102589809">-&gt;</a></p>
+<p>gradle 是什么，不同版本之前是什么关系？</p>
+<p>为什么项目会下载一个没有用到的ndk版本呢？</p>
+<h3 id="想啥写啥"><a href="#想啥写啥" class="headerlink" title="想啥写啥"></a>想啥写啥</h3><p>和一个二傻子调试接口。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/05/work-daily-220805/" rel="prev" title="work-daily-220805">
+                  <i class="fa fa-chevron-left"></i> work-daily-220805
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/08/09/work-daily-220809/" rel="next" title="work-daily-220809">
+                  work-daily-220809 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">DengJinlong</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"dengcqw.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="今日给小宝报了个名，下半年就可以有课上了。虽然是每个周末一节课。比报名培训班要便宜多了。没有关注相关信息，也就错过了托班报名。今日报名就很重要了。小宝还小，我不太愿意让他上托班。明年上幼儿园都快四岁了。也就放心多了。疫情时不时来一下。今天我们小区有密接。整栋楼封闭了。如有确诊，我们小区就要封闭了。昨天晚上我登陆了网站，查看了报名接口。没做校验。我直接写了个js脚本调接口。今天报名时网站被挤爆了。接">
+    <meta name="description" content="技术踩坑ScrollViewContainer 组件我喜欢下面这种风格，我仿造这种风格封装一个scrollview, 可以设置top 和bottom 组件 123&lt;Stack.Navigator&gt;  &lt;Stack.Screen&#x2F;&gt;&lt;&#x2F;Stack.Navigator&gt; 我参考了开源代码，发现子类型其实用来配置内部view的，不是正真的view。我这里也只是要提取出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小宝报名">
-<meta property="og:url" content="https://dengcqw.github.io/2022/07/30/life-20220730/index.html">
+<meta property="og:title" content="work-daily-220801">
+<meta property="og:url" content="https://dengcqw.github.io/2022/08/01/work-daily-220801/index.html">
 <meta property="og:site_name" content="Deng&#39;s Technique Blogs">
-<meta property="og:description" content="今日给小宝报了个名，下半年就可以有课上了。虽然是每个周末一节课。比报名培训班要便宜多了。没有关注相关信息，也就错过了托班报名。今日报名就很重要了。小宝还小，我不太愿意让他上托班。明年上幼儿园都快四岁了。也就放心多了。疫情时不时来一下。今天我们小区有密接。整栋楼封闭了。如有确诊，我们小区就要封闭了。昨天晚上我登陆了网站，查看了报名接口。没做校验。我直接写了个js脚本调接口。今天报名时网站被挤爆了。接">
+<meta property="og:description" content="技术踩坑ScrollViewContainer 组件我喜欢下面这种风格，我仿造这种风格封装一个scrollview, 可以设置top 和bottom 组件 123&lt;Stack.Navigator&gt;  &lt;Stack.Screen&#x2F;&gt;&lt;&#x2F;Stack.Navigator&gt; 我参考了开源代码，发现子类型其实用来配置内部view的，不是正真的view。我这里也只是要提取出">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-30T14:09:44.000Z">
-<meta property="article:modified_time" content="2022-07-30T23:26:09.101Z">
+<meta property="article:published_time" content="2022-08-01T01:01:13.000Z">
+<meta property="article:modified_time" content="2022-08-14T10:18:12.971Z">
 <meta property="article:author" content="DengJinlong">
 <meta property="article:tag" content="计算机">
 <meta property="article:tag" content="computer">
@@ -41,14 +41,14 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://dengcqw.github.io/2022/07/30/life-20220730/">
+<link rel="canonical" href="https://dengcqw.github.io/2022/08/01/work-daily-220801/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dengcqw.github.io/2022/07/30/life-20220730/","path":"2022/07/30/life-20220730/","title":"小宝报名"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dengcqw.github.io/2022/08/01/work-daily-220801/","path":"2022/08/01/work-daily-220801/","title":"work-daily-220801"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>小宝报名 | Deng's Technique Blogs</title>
+<title>work-daily-220801 | Deng's Technique Blogs</title>
   
 
 
@@ -104,7 +104,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -117,6 +117,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E8%B8%A9%E5%9D%91"><span class="nav-number">1.</span> <span class="nav-text">技术踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ScrollViewContainer-%E7%BB%84%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">ScrollViewContainer 组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AC%E5%85%B1%E7%BB%84%E4%BB%B6%E7%AE%A1%E7%90%86%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">公共组件管理问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E6%87%82%E5%B0%B1%E9%97%AE"><span class="nav-number">2.</span> <span class="nav-text">不懂就问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%B3%E5%95%A5%E5%86%99%E5%95%A5"><span class="nav-number">3.</span> <span class="nav-text">想啥写啥</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -129,7 +130,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -177,7 +178,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://dengcqw.github.io/2022/07/30/life-20220730/">
+    <link itemprop="mainEntityOfPage" href="https://dengcqw.github.io/2022/08/01/work-daily-220801/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -190,12 +191,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="小宝报名 | Deng's Technique Blogs">
+      <meta itemprop="name" content="work-daily-220801 | Deng's Technique Blogs">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          小宝报名
+          work-daily-220801
         </h1>
 
         <div class="post-meta-container">
@@ -206,14 +207,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-07-30 22:09:44" itemprop="dateCreated datePublished" datetime="2022-07-30T22:09:44+08:00">2022-07-30</time>
+      <time title="创建时间：2022-08-01 09:01:13" itemprop="dateCreated datePublished" datetime="2022-08-01T09:01:13+08:00">2022-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-31 07:26:09" itemprop="dateModified" datetime="2022-07-31T07:26:09+08:00">2022-07-31</time>
+      <time title="修改时间：2022-08-14 18:18:12" itemprop="dateModified" datetime="2022-08-14T18:18:12+08:00">2022-08-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -221,7 +222,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/life/" itemprop="url" rel="index"><span itemprop="name">生活日记</span></a>
+          <a href="/categories/work/" itemprop="url" rel="index"><span itemprop="name">工作日记</span></a>
         </span>
     </span>
 
@@ -235,8 +236,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>今日给小宝报了个名，下半年就可以有课上了。虽然是每个周末一节课。比报名培训班要便宜多了。<br>没有关注相关信息，也就错过了托班报名。今日报名就很重要了。<br>小宝还小，我不太愿意让他上托班。明年上幼儿园都快四岁了。也就放心多了。<br>疫情时不时来一下。今天我们小区有密接。整栋楼封闭了。如有确诊，我们小区就要封闭了。<br>昨天晚上我登陆了网站，查看了报名接口。没做校验。我直接写了个js脚本调接口。<br>今天报名时网站被挤爆了。接口返回503。我的脚本是到点发请求，谁知网站挂了。我赶紧改脚本，<br>改成间隔发送请求。其他人都卡在界面时，我还能不断重试请求接口。<br>过了几十秒，接口返回已经报名成功，不能在报名。我猜是报上了，就把脚本停了。果然报上了。</p>
-<p>今天发生一件不愉快的事情。小宝奶奶炖了鱼，还挑了骨头。但小宝第一口就吃到了鱼刺。<br>还卡在喉咙某个部位。小宝又哭，又呕。闹了很久，也不配合我们检查。妈妈坚持要去医院。<br>去了医院，医生也没看到鱼刺。小宝也不配合，我们紧紧的按住他，医生还是没法继续检查。<br>折腾了好一会儿，医生让小宝平复下，不哭闹了再看。我们在大厅等，妈妈抱着小宝看电视，然后小宝睡了。<br>妈妈感觉小宝鱼刺可能弄掉了。回家小宝也不闹了，玩了一下午。好像鱼刺真的消失了。</p>
+        <h3 id="技术踩坑"><a href="#技术踩坑" class="headerlink" title="技术踩坑"></a>技术踩坑</h3><h4 id="ScrollViewContainer-组件"><a href="#ScrollViewContainer-组件" class="headerlink" title="ScrollViewContainer 组件"></a>ScrollViewContainer 组件</h4><p>我喜欢下面这种风格，我仿造这种风格封装一个scrollview, 可以设置top 和bottom 组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Stack.Navigator&gt;</span><br><span class="line">  &lt;Stack.Screen/&gt;</span><br><span class="line">&lt;/Stack.Navigator&gt;</span><br></pre></td></tr></table></figure>
+<p>我参考了开源代码，发现子类型其实用来配置内部view的，不是正真的view。<br>我这里也只是要提取出children，放在ScrollView之外。<br>遇到的难题是，类型判断。如何判断child是FixedBottom组件？<br>理论上无法直接判断，js其实都是对象。我想到的办法是使用defaultProps。<br>这样就可以在props中判断是不是我定义的组件。<br>详细代码参考<a target="_blank" rel="noopener" href="https://gist.github.com/dengcqw/a998228ea6f11c64da9cdd5cf20879c5">gist</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;JTContainer&gt;</span><br><span class="line">  &lt;JTContainer.FixedBottom&gt;</span><br><span class="line">    &lt;BottomBar /&gt;</span><br><span class="line">  &lt;/JTContainer.FixedBottom&gt;</span><br><span class="line">&lt;/JTContainer&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="公共组件管理问题"><a href="#公共组件管理问题" class="headerlink" title="公共组件管理问题"></a>公共组件管理问题</h4><p>我新建了一个npm库用来放公共组件。现在问题是组件区分默认导出和非默认导出。想要做到像RN一样导入组件。暂时考虑加强规范。<br>一种方式只默认导出，其他组件导出拆分成独立文件。<br>另一种只非默认导出 使用import * as语法</p>
+<h3 id="不懂就问"><a href="#不懂就问" class="headerlink" title="不懂就问"></a>不懂就问</h3><h3 id="想啥写啥"><a href="#想啥写啥" class="headerlink" title="想啥写啥"></a>想啥写啥</h3><p>上周末，同事们又加班两天，新app总于正式上线了。可能是我们的总监(其实是CEO, 感觉没有总监)，在老板群里了发一段话，一是宣布，二是感谢，三是鼓励团队。<br>但是其中有一句话，我听着怪怪的：团队可能或有不足，有奋斗的精神在，就什么都不怕。<br>我觉得应该改成：困难再大，有奋斗的精神在，也什么都不怕。</p>
+<p>我说今天优化下项目。领导直摇头。<br>领导听说我没有需求，立刻给了我一个需求。</p>
 
     </div>
 
@@ -250,11 +257,14 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/07/29/work-daily-220729/" rel="prev" title="work-daily-220729">
-                  <i class="fa fa-chevron-left"></i> work-daily-220729
+                <a href="/2022/07/30/life-daily-220730-signup-for-child/" rel="prev" title="小宝报名">
+                  <i class="fa fa-chevron-left"></i> 小宝报名
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2022/08/02/work-daily-220802/" rel="next" title="work-daily-220802">
+                  work-daily-220802 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
